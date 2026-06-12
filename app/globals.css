@@ -3,7 +3,11 @@
   padding:0;
   box-sizing:border-box;
 }
-
+html,
+body{
+  height:100%;
+  overflow:hidden;
+}
 body{
   background:#050505;
   color:#fff;
@@ -13,7 +17,8 @@ body{
 
 .app{
   display:flex;
-  height:100vh;
+  height:100dvh;
+  overflow:hidden;
 }
 
 /* SIDEBAR */
@@ -600,11 +605,7 @@ body{
 
 /* MOBILE RESPONSIVE */
 
-@media (max-width: 768px){
-
-  body{
-    overflow:auto;
-  }
+  @media (max-width: 768px){
 
   .app{
     flex-direction:column;
@@ -678,16 +679,12 @@ body{
   display:none;
 }
 
-@media (max-width:768px){
-
-  body{
-    overflow:auto;
-  }
+  @media (max-width:768px){
 
   .mobileMenuBtn{
     display:block;
 
-    position:absolute;
+    position:fixed;
 
     left:10px;
     top:8px;
@@ -729,18 +726,30 @@ body{
   .main{
     width:100%;
     padding:12px;
+
+    height:100dvh;
+
+    overflow:hidden;
   }
 
   .header{
-    position:sticky;
+
+    position:fixed;
 
     top:0;
+    left:0;
+
+    width:100%;
 
     z-index:2000;
 
     background:#050505;
 
     padding-top:8px;
+
+    border-bottom:
+      1px solid rgba(255,255,255,.05);
+
   }
 
   .header h1{
@@ -753,7 +762,15 @@ body{
     letter-spacing:2px;
   }
   .chatContainer{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    margin-top:120px;
+
     padding:0 5px 120px 5px;
+
   }
   .userMessage{
     max-width:90%;
@@ -779,7 +796,11 @@ body{
   background:#050505;
 
   z-index:2000;
-
+  padding-bottom:
+    calc(
+      env(safe-area-inset-bottom)
+      + 12px
+    );
 }
 
 }
