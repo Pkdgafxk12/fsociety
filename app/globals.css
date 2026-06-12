@@ -153,6 +153,10 @@ body{
   display:flex;
   flex-direction:column;
 
+  height:100vh;
+
+  overflow:hidden;
+
   padding:25px;
 }
 
@@ -160,7 +164,19 @@ body{
 
 .header{
   text-align:center;
-  position:relative;
+
+  position:sticky;
+
+  top:0;
+
+  z-index:1000;
+
+  background:#050505;
+
+  padding-bottom:15px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.05);
 }
 
 .header h1{
@@ -186,14 +202,13 @@ body{
 }
 
 /* CHAT */
-
 .chatContainer{
   width:100%;
   max-width:900px;
 
   flex:1;
 
-  margin:30px auto 0;
+  margin:15px auto 0;
 
   overflow-y:auto;
 
@@ -203,6 +218,8 @@ body{
   gap:14px;
 
   scroll-behavior:smooth;
+
+  padding-bottom:120px;
 }
 
 .userMessage{
@@ -267,12 +284,22 @@ body{
   width:100%;
   max-width:900px;
 
-  margin:20px auto 0;
+  margin:0 auto;
 
   display:flex;
   align-items:flex-end;
 
   gap:10px;
+
+  position:sticky;
+
+  bottom:0;
+
+  background:#050505;
+
+  padding:12px 0;
+
+  z-index:1000;
 }
 
 .inputContainer textarea{
@@ -705,7 +732,14 @@ body{
   }
 
   .header{
-    position:relative;
+    position:sticky;
+
+    top:0;
+
+    z-index:2000;
+
+    background:#050505;
+
     padding-top:8px;
   }
 
@@ -719,7 +753,7 @@ body{
     letter-spacing:2px;
   }
   .chatContainer{
-    padding:0 5px;
+    padding:0 5px 120px 5px;
   }
   .userMessage{
     max-width:90%;
@@ -729,9 +763,24 @@ body{
     max-width:95%;
   }
 
-  .inputContainer{
-    max-width:100%;
-  }
+.inputContainer{
+
+  max-width:100%;
+
+  position:fixed;
+
+  bottom:0;
+  left:0;
+
+  width:100%;
+
+  padding:12px;
+
+  background:#050505;
+
+  z-index:2000;
+
+}
 
 }
 .chatTitle{
