@@ -11,6 +11,8 @@ import { Prism as SyntaxHighlighter }
 from "react-syntax-highlighter";
 import { oneDark }
 from "react-syntax-highlighter/dist/esm/styles/prism";
+import { FiMenu }
+from "react-icons/fi";
   type Message = {
 
     role:
@@ -41,8 +43,28 @@ const [messages,
     useState<string | null>(null);
   const [loading, setLoading] =
     useState(false);
+  const [sidebarOpen, setSidebarOpen] =
+    useState(false);
   const [menuOpen, setMenuOpen] =
     useState<string | null>(null);
+
+    useEffect(() => {
+
+      const closeMenu = () =>
+        setMenuOpen(null);
+
+      window.addEventListener(
+        "click",
+        closeMenu
+      );
+
+      return () =>
+        window.removeEventListener(
+          "click",
+          closeMenu
+        );
+
+    }, []);
   const [file, setFile] =
     useState<File | null>(null);
   const [previewUrl, setPreviewUrl] =
@@ -315,7 +337,13 @@ const [messages,
   };
   return (
     <div className="app">
-      <aside className="sidebar">
+      <aside
+        className={
+          sidebarOpen
+            ? "sidebar open"
+            : "sidebar"
+        }
+      >
         <div className="logo">
           <h1>FUCK SOCIETY</h1>
           <p>WE ARE FINALLY AWAKE</p>
@@ -352,7 +380,7 @@ const [messages,
             setMessages([]);
             setMessage("");
             setFile(null);
-
+            setSidebarOpen(false);
           }}
         >
           + NEW CHAT
@@ -372,20 +400,19 @@ const [messages,
           }
           onClick={() => {
 
-            setCurrentChatId(
-              chat.id
-            );
+            setCurrentChatId(chat.id);
 
             localStorage.setItem(
               "active-chat",
               chat.id
             );
 
-            setMessages(
-              chat.messages
-            );
+            setMessages(chat.messages);
+
+            setSidebarOpen(false);
 
           }}
+
         >
 
         <div className="chatRow">
@@ -463,8 +490,29 @@ const [messages,
         </div>
       </aside>
 
+      {sidebarOpen && (
+
+        <div
+          className="overlay"
+          onClick={() =>
+            setSidebarOpen(false)
+          }
+        />
+
+      )}
+
+
+
       <main className="main">
         <div className="header">
+        <button
+          className="mobileMenuBtn"
+          onClick={() =>
+            setSidebarOpen(!sidebarOpen)
+          }
+        >
+          <FiMenu />
+        </button>
           <h1>FUCK SOCIETY</h1>
           <p>CONTROL IS AN ILLUSION</p>
         </div>

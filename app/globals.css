@@ -160,6 +160,7 @@ body{
 
 .header{
   text-align:center;
+  position:relative;
 }
 
 .header h1{
@@ -568,4 +569,189 @@ body{
 
 .dropdown button:hover{
   background:#2a2a2a;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px){
+
+  body{
+    overflow:auto;
+  }
+
+  .app{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+    height:auto;
+    padding:15px;
+    border-right:none;
+    border-bottom:1px solid rgba(255,0,0,.15);
+  }
+
+  .logo h1{
+    font-size:28px;
+    text-align:center;
+  }
+
+  .logo p{
+    text-align:center;
+  }
+
+  .history{
+    max-height:180px;
+    overflow-y:auto;
+  }
+
+  .main{
+    padding:12px;
+  }
+
+  .header h1{
+    font-size:34px;
+    letter-spacing:3px;
+  }
+
+  .header p{
+    font-size:12px;
+    letter-spacing:2px;
+  }
+
+  .chatContainer{
+    margin-top:15px;
+    max-width:100%;
+  }
+
+  .userMessage{
+    max-width:90%;
+  }
+
+  .aiMessage{
+    max-width:95%;
+  }
+
+  .inputContainer{
+    max-width:100%;
+  }
+
+  .inputContainer textarea{
+      font-size:15px;
+      min-height:55px;
+      padding:14px 18px;
+  }
+
+  .filePreview img{
+    width:90px;
+  }
+
+}
+.mobileMenuBtn{
+  display:none;
+}
+
+@media (max-width:768px){
+
+  body{
+    overflow:auto;
+  }
+
+  .mobileMenuBtn{
+    display:block;
+
+    position:absolute;
+
+    left:10px;
+    top:8px;
+
+    background:none;
+    border:none;
+
+    color:white;
+
+    font-size:26px;
+
+    cursor:pointer;
+
+    z-index:2000;
+  }
+
+  .sidebar{
+
+    position:fixed;
+
+    top:0;
+    left:-280px;
+
+    width:280px;
+    height:100vh;
+
+    z-index:1500;
+
+    transition:.3s;
+
+    overflow-y:auto;
+
+  }
+
+  .sidebar.open{
+    left:0;
+    z-index:1501;
+  }
+  .main{
+    width:100%;
+    padding:12px;
+  }
+
+  .header{
+    position:relative;
+    padding-top:8px;
+  }
+
+  .header h1{
+    font-size:32px;
+    letter-spacing:3px;
+  }
+
+  .header p{
+    font-size:12px;
+    letter-spacing:2px;
+  }
+  .chatContainer{
+    padding:0 5px;
+  }
+  .userMessage{
+    max-width:90%;
+  }
+
+  .aiMessage{
+    max-width:95%;
+  }
+
+  .inputContainer{
+    max-width:100%;
+  }
+
+}
+.chatTitle{
+  flex:1;
+
+  overflow:hidden;
+
+  white-space:nowrap;
+
+  text-overflow:ellipsis;
+}
+.overlay{
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+    rgba(0,0,0,.6);
+
+  z-index:1400;
+
 }
