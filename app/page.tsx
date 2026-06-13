@@ -630,64 +630,67 @@ const [messages,
 
           </div>
         )}
+
         <div className="inputContainer">
-        <input
-          type="file"
-          id="fileInput"
-          hidden
-          onChange={(e) =>
-            setFile(
-              e.target.files?.[0] || null
-            )
-          }
-        />
 
-        <button
-          className="iconBtn"
-          onClick={() =>
-            document
-              .getElementById(
-                "fileInput"
+          <input
+            type="file"
+            id="fileInput"
+            hidden
+            onChange={(e) =>
+              setFile(
+                e.target.files?.[0] || null
               )
-              ?.click()
-          }
-        >
-          +
-        </button>
-
-        <textarea
-          value={message}
-          onChange={(e) =>
-            setMessage(
-              e.target.value
-            )
-          }
-
-          onKeyDown={(e) => {
-
-            if (
-              e.key === "Enter" &&
-              !e.shiftKey
-            ) {
-
-              e.preventDefault();
-
-              handleSend();
-
             }
+          />
 
-          }}
+          <button
+            className="iconBtn"
+            onClick={() =>
+              document
+                .getElementById("fileInput")
+                ?.click()
+            }
+          >
+            +
+          </button>
 
-          placeholder="Ask anything..."
-        />
+          <div className="promptWrapper">
 
-      <button
-        className="sendBtn"
-        onClick={handleSend}
-        disabled={loading}
-      >
-        <IoArrowUp />
-      </button>
+            <textarea
+              value={message}
+              onChange={(e) =>
+                setMessage(
+                  e.target.value
+                )
+              }
+              onKeyDown={(e) => {
+
+                if (
+                  e.key === "Enter" &&
+                  !e.shiftKey
+                ) {
+
+                  e.preventDefault();
+
+                  handleSend();
+
+                }
+
+              }}
+              placeholder="Ask anything..."
+            />
+
+            <button
+              className="sendBtn"
+              onClick={handleSend}
+              disabled={loading}
+            >
+              <IoArrowUp />
+            </button>
+
+          </div>
+
         </div>
       </main>
     </div>

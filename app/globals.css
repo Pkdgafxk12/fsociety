@@ -323,7 +323,7 @@ body{
 
   color:white;
 
-  padding:18px 22px;
+  padding:18px 70px 18px 22px;
 
   font-size:16px;
 
@@ -861,4 +861,41 @@ body{
 
 .codeCopyBtn:hover{
   background:#ff2a2a;
+}
+
+.promptWrapper{
+  position:relative;
+
+  flex:1;
+}
+
+.promptWrapper textarea{
+  width:100%;
+}
+
+.promptWrapper .sendBtn{
+
+  position:absolute;
+
+  right:12px;
+
+  top:48%;
+
+  transform:translateY(-50%);
+
+  width:40px;
+  height:40px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:#ff2a2a;
+
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
 }
