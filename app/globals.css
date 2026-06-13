@@ -908,3 +908,19 @@ body{
   }
 
 }
+
+@media (max-width:768px){
+
+  .dropdown{
+
+    right:auto;
+
+    left:10px;
+
+    top:55px;
+
+    min-width:140px;
+
+  }
+
+}
