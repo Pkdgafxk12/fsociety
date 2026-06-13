@@ -46,8 +46,10 @@ const [messages,
   const [sidebarOpen, setSidebarOpen] =
     useState(false);
   const [menuOpen, setMenuOpen] =
+    
+  
     useState<string | null>(null);
-
+    /*
     useEffect(() => {
 
       const closeMenu = (e: MouseEvent) => {
@@ -80,7 +82,7 @@ const [messages,
           closeMenu
         );
 
-    }, []);
+    }, []); */
   const [file, setFile] =
     useState<File | null>(null);
   const [previewUrl, setPreviewUrl] =
