@@ -566,7 +566,21 @@ const [messages,
                         className || ""
                       );
 
-                    return match ? (
+                  return match ? (
+
+                    <div className="codeWrapper">
+
+                      <button
+                        className="codeCopyBtn"
+                        onClick={() =>
+                          navigator.clipboard.writeText(
+                            String(children)
+                          )
+                        }
+                      >
+                        <FiCopy />
+                      </button>
+
                       <SyntaxHighlighter
                         language={match[1]}
                         style={oneDark as any}
@@ -574,7 +588,11 @@ const [messages,
                       >
                         {String(children)}
                       </SyntaxHighlighter>
-                    ) : (
+
+                    </div>
+
+                  ) : (
+                   
                       <code className={className}>
                         {children}
                       </code>

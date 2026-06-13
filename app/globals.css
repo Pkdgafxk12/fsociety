@@ -825,3 +825,40 @@ body{
   z-index:1400;
 
 }
+
+.codeWrapper{
+  position:relative;
+}
+
+.codeCopyBtn{
+
+  position:absolute;
+
+  top:10px;
+  right:10px;
+
+  width:34px;
+  height:34px;
+
+  border:none;
+
+  border-radius:8px;
+
+  background:#1e1e1e;
+
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+
+  z-index:20;
+
+  transition:.2s;
+}
+
+.codeCopyBtn:hover{
+  background:#ff2a2a;
+}
