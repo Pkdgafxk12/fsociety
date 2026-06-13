@@ -561,10 +561,13 @@ body{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  position:relative;
-  width:100%;
-}
 
+  position:relative;
+
+  width:100%;
+
+  overflow:visible;
+}
 .menuBtn{
   background:none;
   border:none;
@@ -579,27 +582,35 @@ body{
 }
 
 .dropdown{
+
   position:absolute;
 
-  top:55px;
+  top:50%;
 
-  left:10px;
+  right:45px;
 
-  right:auto;
+  left:auto;
+
+  transform:translateY(-50%);
 
   display:flex;
   flex-direction:column;
 
+  min-width:120px;
+
   background:#1a1a1a;
+
   border:1px solid #333;
 
-  border-radius:8px;
-
-  min-width:140px;
+  border-radius:10px;
 
   overflow:hidden;
 
   z-index:999999;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.5);
+
 }
 
 .dropdown button{
@@ -931,40 +942,4 @@ body{
 
 }
 
-@media (max-width:768px){
 
-  .dropdown{
-
-    right:auto;
-
-    left:10px;
-
-    top:55px;
-
-    min-width:140px;
-
-  }
-
-}
-
-@media (max-width:768px){
-
-  .chatItem{
-    position:relative;
-  }
-
-  .menuBtn{
-    position:relative;
-    z-index:999999;
-  }
-
-  .dropdown{
-    left:10px;
-    right:auto;
-
-    top:50px;
-
-    z-index:999999;
-  }
-
-}
