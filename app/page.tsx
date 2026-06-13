@@ -54,13 +54,13 @@ const [messages,
         setMenuOpen(null);
 
       window.addEventListener(
-        "click",
+        "pointerdown",
         closeMenu
       );
 
       return () =>
         window.removeEventListener(
-          "click",
+          "pointerdown",
           closeMenu
         );
 
