@@ -733,7 +733,7 @@ body{
 
     transition:.3s;
 
-    overflow-y:auto;
+    overflow-y:visible;
 
   }
 
