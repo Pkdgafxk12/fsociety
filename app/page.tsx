@@ -50,17 +50,33 @@ const [messages,
 
     useEffect(() => {
 
-      const closeMenu = () =>
-        setMenuOpen(null);
+      const closeMenu = (e: MouseEvent) => {
 
-      window.addEventListener(
-        "pointerdown",
+        const target =
+          e.target as HTMLElement;
+
+        if (
+
+          !target.closest(".menuBtn") &&
+
+          !target.closest(".dropdown")
+
+        ) {
+
+          setMenuOpen(null);
+
+        }
+
+      };
+
+      document.addEventListener(
+        "click",
         closeMenu
       );
 
       return () =>
-        window.removeEventListener(
-          "pointerdown",
+        document.removeEventListener(
+          "click",
           closeMenu
         );
 
