@@ -567,20 +567,29 @@ body{
   color:white;
   font-size:20px;
   cursor:pointer;
+
+  position:relative;
+  z-index:999999;
+
+  padding:8px;
 }
 
 .dropdown{
   position:absolute;
+
   top:45px;
   right:10px;
 
-  min-width:120px;
+  min-width:140px;
 
   background:#1a1a1a;
   border:1px solid #333;
   border-radius:10px;
 
-  z-index:99999;
+  z-index:999999;
+
+  box-shadow:
+    0 0 20px rgba(0,0,0,.6);
 }
 
 .dropdown button{
@@ -921,6 +930,28 @@ body{
 
     min-width:140px;
 
+  }
+
+}
+
+@media (max-width:768px){
+
+  .chatItem{
+    position:relative;
+  }
+
+  .menuBtn{
+    position:relative;
+    z-index:999999;
+  }
+
+  .dropdown{
+    left:10px;
+    right:auto;
+
+    top:50px;
+
+    z-index:999999;
   }
 
 }
