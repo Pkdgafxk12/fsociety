@@ -116,6 +116,10 @@ body{
   cursor:pointer;
 
   transition:.3s;
+
+  position:relative;
+
+  overflow:visible;
 }
 
 .chatItem:hover{
@@ -577,19 +581,25 @@ body{
 .dropdown{
   position:absolute;
 
-  top:45px;
-  right:10px;
+  top:55px;
 
-  min-width:140px;
+  left:10px;
+
+  right:auto;
+
+  display:flex;
+  flex-direction:column;
 
   background:#1a1a1a;
   border:1px solid #333;
-  border-radius:10px;
+
+  border-radius:8px;
+
+  min-width:140px;
+
+  overflow:hidden;
 
   z-index:999999;
-
-  box-shadow:
-    0 0 20px rgba(0,0,0,.6);
 }
 
 .dropdown button{
@@ -634,8 +644,11 @@ body{
   }
 
   .history{
-    max-height:180px;
-    overflow-y:auto;
+
+    max-height:none;
+
+    overflow:visible;
+
   }
 
   .main{
